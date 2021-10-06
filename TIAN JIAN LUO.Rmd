@@ -1,0 +1,36 @@
+---
+output:
+  word_document: default
+  pdf_document: default
+  html_document: default
+---
+---
+
+title: " Air Quality Dataset"
+author: "TIAN JIAN LUO"
+date: "2021/10/6"
+
+
+
+## <font face="" color=YELLOW> Step one</font>  
+## ***<font face="" color=YELLOW>In a code chunk make a data frame from the air quality dataset.</font>***
+```{r airquality1}
+mydata<-data.frame(airquality)
+summary(mydata)
+```
+
+
+
+## <font face="" color=RED>Step two</font>
+## ***<font face="" color=red>NA value in the data.</font>***
+```{r airquality2}
+mydata
+```
+
+
+## <font face="" color=green> Step three </font>
+## ***<font face="" color=blue>In the same chunk clean the dataset from NA values..</font>***
+```{r airquality3}
+good<-complete.cases(mydata)
+mydata[good, ]
+```
